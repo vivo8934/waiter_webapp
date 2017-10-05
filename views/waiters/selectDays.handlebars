@@ -4,37 +4,37 @@
     <meta charset="utf-8">
     <title>My Waiters</title>
       <link rel="stylesheet" href="waiter.css">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" media="all">
+    <!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" media="all">
     <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
   </head>
   <body>
     <div class="jumbotron">
       <h1>Waiters Application</h1>
       <br>
-      Welcome, {{Msg}}
-      <form action='/waiters/:waitername', method='post'>
+      Welcome, {{waiterName}}
+
+        <form action="/waiters/{{waiterName}}", method='post'>
 <div class="checkbox">
-
-          <label><input type="checkbox" name="days" value="Monday">Monday</lablel>
-          <label><input type="checkbox" name="days"  value = "Tuesday">Tuesday</lablel>
-          <label><input type="checkbox" name="days"  value="Wednesday">Wednesday</lablel>
-          <label><input type="checkbox" name="days"  value = "Thursday">Thursday</lablel>
-          <label><input type="checkbox" name="days"  value="Friday">Friday</lablel>
-          <label><input type="checkbox" name="days" value="Saturday">Saturday</lablel>
-          <label><input type="checkbox" name="days" value="Sunday">Sunday</lablel>
-
+  <input type="checkbox"  name="days" value="Monday" {{#if shift.Monday}}checked{{/if}} > Monday
+  <input type="checkbox"  name="days" value="Tuesday" {{#if shift.Tuesday}}checked{{/if}} > Tuesday
+  <input type="checkbox"  name="days" value="Wednesday" {{#if shift.Wednesday}}checked{{/if}} > Wednesday
+  <input type="checkbox"  name="days" value="Thursday" {{#if shift.Thursday}}checked{{/if}} > Thursday
+  <input type="checkbox"  name="days" value="Friday" {{#if shift.Friday}}checked{{/if}} > Friday
+  <input type="checkbox"  name="days" value="Saturday" {{#if shift.Saturday}}checked{{/if}} > Saturday
+  <input type="checkbox"  name="days" value="Sunday" {{#if shift.Sunday}}checked{{/if}} > Sunday
         </div>
            <button type="submit" class="btn btn-default">Submit</button>
 
       </form>
 <br>
 <br>
-    <!-- <p> Hello, {{Msg}}, you will be working these following days <ul>
-      <li>{{days}}</li>
-    </ul></p> -->
 </div>
+{{messages.erorr}}
+{{messages.msg}}
+<br><br>
+{{messages.msg2}}
   </body>
 </html>

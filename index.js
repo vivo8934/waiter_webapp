@@ -1,6 +1,6 @@
 const express = require('express');
 var exphbs  = require('express-handlebars');
-const WaiterRoutes = require('./waiter');
+const WaiterRoutes = require("./waiter");
 const Models = require('./models');
 const app = express();
 
@@ -25,7 +25,7 @@ app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000  * 30}}))
 app.use(flash());
 
 
-app.get('/waiters/:waitername', waiterRoutes.add);
-app.post('/waiters/:waitername', waiterRoutes.index)
+app.get('/waiters/:waitername', waiterRoutes.view);
+app.post('/waiters/:waitername', waiterRoutes.addedDays)
 app.get('/days', waiterRoutes.roster)
-var server = app.listen(4000);
+var server = app.listen(process.env.PORT || 3002);

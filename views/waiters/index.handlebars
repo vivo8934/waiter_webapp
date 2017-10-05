@@ -3,14 +3,93 @@
   <head>
     <meta charset="utf-8">
     <title>My Waiters</title>
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" media="all">
+    <!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" media="all">
     <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
   </head>
   <body>
 
+    <table>
+      <thead>
+      <th>Sunday</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+    </thead>
+
+    <tbody>
+      <td>
+        <ul class="{{waitersPerDay.Sunday.displayStyle}}">
+          {{#each waitersPerDay.Sunday.waiters}}
+            <li >
+              {{this}}
+            </li>
+          {{/each}}
+        </ul>
+      </td>
+      <td>
+        <ul class="{{waitersPerDay.Monday.displayStyle}}">
+          {{#each waitersPerDay.Monday.waiters}}
+            <li>
+              {{this}}
+            </li>
+          {{/each}}
+        </ul>
+      </td>
+      <td>
+        <ul class="{{waitersPerDay.Tuesday.displayStyle}}">
+          {{#each waitersPerDay.Tuesday.waiters}}
+            <li>
+              {{this}}
+            </li>
+          {{/each}}
+        </ul>
+      </td>
+      <td>
+        <ul class="{{waitersPerDay.Wednesday.displayStyle}}">
+          {{#each waitersPerDay.Wednesday.waiters}}
+            <li>
+              {{this}}
+            </li>
+          {{/each}}
+        </ul>
+      </td>
+      <td>
+        <ul class="{{waitersPerDay.Thursday.displayStyle}}">
+          {{#each waitersPerDay.Thursday.waiters}}
+            <li>
+              {{this}}
+            </li>
+          {{/each}}
+        </ul>
+      </td>
+      <td>
+        <ul class="{{waitersPerDay.Friday.displayStyle}}">
+          {{#each waitersPerDay.Friday.waiters}}
+            <li>
+              {{this}}
+            </li>
+          {{/each}}
+        </ul>
+      </td>
+      <td>
+        <ul class="{{waitersPerDay.Saturday.displayStyle}}" >
+          {{#each waitersPerDay.Saturday.waiters}}
+            <li>
+              {{this}}
+            </li>
+          {{/each}}
+        </ul>
+      </td>
+
+    </tbody>
+
+    </table>
 
 
   </body>

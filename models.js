@@ -1,27 +1,22 @@
 const mongoose = require('mongoose');
-module.exports = function(mongoURL){
-mongoose.Promise = global.Promise;
-mongoose.connect(mongoURL);
+module.exports = function(mongoUrl){
+mongoose.Promise = global.Promise
+
+mongoose.connection.on('error', function(err){
+  console.log(err);
+})
+mongoose.connect(mongoUrl);
 
 const WaiterSchema = mongoose.Schema({
-
-  username: String,
-  Monday: Boolean,
-  Tuesday: Boolean,
-  Wednesday: Boolean,
-  Thursday: Boolean,
-  Friday: Boolean,
-  Saturday: Boolean,
-  Sunday: Boolean
+  waiterName : String,
+  days : [String]
 });
-WaiterSchema.index({
-   username: 1,
- }, {
-   unique: true
- });
- const Waiters = mongoose.model('Waiters', WaiterSchema);
 
-   return {
-     Waiters
-   };
+WaiterSchema.index({waiterName : 1}, { unique : true});
+
+const Waiters = mongoose.model('Waiter', WaiterSchema);
+
+return{
+  Waiters
+};
 }
