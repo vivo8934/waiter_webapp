@@ -28,4 +28,5 @@ app.use(flash());
 app.get('/waiters/:waitername', waiterRoutes.view);
 app.post('/waiters/:waitername', waiterRoutes.addedDays)
 app.get('/days', waiterRoutes.roster)
+app.post('/days', waiterRoutes.reset);
 var server = app.listen(process.env.PORT || 3002);

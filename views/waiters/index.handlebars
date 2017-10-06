@@ -3,93 +3,96 @@
   <head>
     <meta charset="utf-8">
     <title>My Waiters</title>
-    <!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" media="all">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" media="all">
     <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
 
-    <table>
+<div class="text-center">
+
+<h1><u><strong>Weekly Roster</strong></u></h1 class="heading ">
+
+<div class="embed-responsive embed-responsive-4by3">
+    <table class="table table-bordered">
       <thead>
-      <th>Sunday</th>
       <th>Monday</th>
       <th>Tuesday</th>
       <th>Wednesday</th>
       <th>Thursday</th>
       <th>Friday</th>
       <th>Saturday</th>
+      <th>Sunday</th>
     </thead>
 
     <tbody>
-      <td>
-        <ul class="{{waitersPerDay.Sunday.displayStyle}}">
-          {{#each waitersPerDay.Sunday.waiters}}
-            <li >
-              {{this}}
-            </li>
-          {{/each}}
-        </ul>
-      </td>
-      <td>
-        <ul class="{{waitersPerDay.Monday.displayStyle}}">
-          {{#each waitersPerDay.Monday.waiters}}
-            <li>
-              {{this}}
-            </li>
-          {{/each}}
-        </ul>
-      </td>
-      <td>
-        <ul class="{{waitersPerDay.Tuesday.displayStyle}}">
-          {{#each waitersPerDay.Tuesday.waiters}}
-            <li>
-              {{this}}
-            </li>
-          {{/each}}
-        </ul>
-      </td>
-      <td>
-        <ul class="{{waitersPerDay.Wednesday.displayStyle}}">
-          {{#each waitersPerDay.Wednesday.waiters}}
-            <li>
-              {{this}}
-            </li>
-          {{/each}}
-        </ul>
-      </td>
-      <td>
-        <ul class="{{waitersPerDay.Thursday.displayStyle}}">
-          {{#each waitersPerDay.Thursday.waiters}}
-            <li>
-              {{this}}
-            </li>
-          {{/each}}
-        </ul>
-      </td>
-      <td>
-        <ul class="{{waitersPerDay.Friday.displayStyle}}">
-          {{#each waitersPerDay.Friday.waiters}}
-            <li>
-              {{this}}
-            </li>
-          {{/each}}
-        </ul>
-      </td>
-      <td>
-        <ul class="{{waitersPerDay.Saturday.displayStyle}}" >
-          {{#each waitersPerDay.Saturday.waiters}}
-            <li>
-              {{this}}
-            </li>
-          {{/each}}
-        </ul>
-      </td>
+    <ul>
 
+      <td class="{{monday}}">
+        {{#each data.Monday.waiters}}
+        <li>{{this}}</li>
+        {{/each}}
+      </td>
+      <td class="{{tuesday}}">
+        {{#each data.Tuesday.waiters}}
+        <li>{{this}}</li>
+        {{/each}}
+      </td>
+      <td class= "{{wednesday}}">
+        {{#each data.Wednesday.waiters}}
+        <li>{{this}}</li>
+        {{/each}}
+      </td>
+      <td class= "{{thursday}}">
+        {{#each data.Thursday.waiters}}
+        <li>{{this}}</li>
+        {{/each}}
+      </td>
+      <td class= "{{friday}}">
+        {{#each data.Friday.waiters}}
+        <li>{{this}}</li>
+        {{/each}}
+      </td>
+      <td class= "{{saturday}}">
+        {{#each data.Saturday.waiters}}
+        <li>{{this}}</li>
+        {{/each}}
+      </td>
+      <td class= "{{sunday}}">
+        {{#each data.Sunday.waiters}}
+        <li>{{this}}</li>
+        {{/each}}
+      </td>
+    </ul>
     </tbody>
-
     </table>
+    <div class="alert alert-info">
+    <strong>{{messages.msg}}</strong>
+  </div>
+<form action='/days' method="post">
+  <button type="submit" class="btn btn-default">Reset_Database</button>
+<br><br>
+  <div class="green">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong>Green!</strong> Indicates that waiters on this day are enough</div>
+<br>
+<div class="blue">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <strong>Blue!</strong> Indicates that waiters on this day are still short
+</div>
+<br>
+<div class="lite_red">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <strong>Lite_red1</strong> Indicates that waiters on this day are more than enough</div>
+
+</form>
+
+
+  </div>
+</div>
+
 
 
   </body>

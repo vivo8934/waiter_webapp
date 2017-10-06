@@ -4,3 +4,50 @@
 .jumbotron{
   margin: auto;
 }
+li{
+  list-style-type: none;
+  color: white;
+}
+.colorNO{
+  background-color: green;
+}
+.colorNO1{
+  background-color: blue;
+}
+.colorNO2{
+  background-color: #910707;
+}
+.green {
+    padding: 20px;
+    background-color: green;
+    color: white;
+    width: 40%
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+.blue {
+    padding: 20px;
+    background-color: blue;
+    color: white;
+    width: 40%
+}
+.lite_red{
+  padding: 20px;
+  background-color: #910707;
+  color: white;
+  width: 40%
+
+}
