@@ -37,9 +37,7 @@ if(!waiterShift || !waiterShift.days){
     }
     else{
       models.Waiters.create(waiterShift, function(err, results){
-        req.flash('msg', 'Your have selected this day(s) to work: ' + waiterShift.days);
-
-             req.flash('msg2', 'Your shift day(s) has been successfully saved ' + waiterShift.waiterName);
+        req.flash('msg', 'Your working days are: ' + waiterShift.days);
              res.redirect('/waiters/' + waiterName);
       })
     }
